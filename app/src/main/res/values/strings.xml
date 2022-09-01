@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CryptoTracker</string>
+
+    <string-array name="hints">
+        <item>Bitcoin</item>
+        <item>Ethereum</item>
+        <item>Tether</item>
+    </string-array>
+</resources>

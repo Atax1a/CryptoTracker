@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/main_gray"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/edSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="@array/hints"
+        android:background="@drawable/ed_round"
+        android:drawableEnd="@drawable/ic_search"
+        android:inputType="text"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="@color/main_white"
+        android:textColorHint="#80EDEDED"
+        android:translationZ="3dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/showFilters"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@id/edSearch"
+        android:layout_marginStart="5dp"
+        android:layout_toStartOf="@id/filterContainer"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/filter_round_button_selected"
+        android:drawableStart="@drawable/ic_left"
+        android:drawableTint="@color/main_gray"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="Фильтры"
+        android:textAllCaps="false"
+        android:textColor="@color/main_gray"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/filterContainer"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/edSearch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHourFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/filter_round_button"
+            android:drawableStart="@drawable/ic_trending"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="1h"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDayFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/filter_round_button"
+            android:drawableStart="@drawable/ic_trending"
+            android:drawableTint="@color/white"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="24h"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnWeekFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/filter_round_button"
+            android:drawableStart="@drawable/ic_trending"
+            android:drawableTint="@color/white"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="7d"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currencyRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/showFilters"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rv_item_round"
+        android:clipChildren="false"
+        tools:listitem="@layout/currency_rv_item" />
+
+    <ProgressBar
+        android:id="@+id/loadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
