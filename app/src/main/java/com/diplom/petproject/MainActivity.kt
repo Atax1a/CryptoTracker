@@ -200,6 +200,7 @@ class MainActivity : AppCompatActivity() {
         requestQueue.add(jsonRequest)
     }
 
+    // Getting metadata from the API
     private suspend fun getMetaDataFromApi(requestQueue: RequestQueue, url: String) {
         var allCurrencyObject: JSONObject
         var currencyObject: JSONObject
